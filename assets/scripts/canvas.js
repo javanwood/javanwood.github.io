@@ -107,6 +107,8 @@ function shuffle(array) {
 //
 // Drawing.
 
+
+
 function genNodeLinks(nodes) {
     var nodeLinks = [];
     nodes.forEach(function (node, index) {
@@ -120,31 +122,36 @@ function genNodeLinks(nodes) {
     return nodeLinks;
 }
 
-function drawMap(nodes, nodeLinks, canvasName) {
+var canvas = {};
+canvas.getCanvas = function (name) {
+    this.c = document.getElementById(name);
+    this.width = this.c.width;
+    this.height = this.c.height;
+    this.context = this.c.getContext("2d");
+    this.context.font = "14px Arial";
+}
+canvas.drawLine = function (x1, y1, x2, y2) {
+    this.context.moveTo(x1 + this.xOffset, this.height - (y1 + this.yOffset));
+    this.context.lineTo(x2 + this.xOffset, this.height - (y2 + this.yOffset));
+    this.context.stroke();
+};
+canvas.drawCircle = function(x, y, radius) {
+    this.context.beginPath();
+    this.context.arc(x + this.xOffset, this.height - (y + this.yOffset),radius,0,2*Math.PI);
+    this.context.stroke();
+    this.context.fill();
+}
+canvas.drawText = function (x, y, text) {
+    this.context.fillText(text, x + this.xOffset, this.height - (y + this.yOffset));
+};
+canvas.clear = function () {
+    this.context.clearRect(0, 0, canvas.width, canvas.height);
+}
+canvas.getCanvas("myCanvas");
 
-    var canvas = {};
-    canvas.getCanvas = function (name) {
-        this.c = document.getElementById(name);
-        this.width = this.c.width;
-        this.height = this.c.height;
-        this.context = this.c.getContext("2d");
-        this.context.font = "14px Arial";
-        this.context.clearRect(0, 0, canvas.width, canvas.height);
-    }
-    canvas.drawLine = function (x1, y1, x2, y2) {
-        this.context.moveTo(x1 + this.xOffset, this.height - (y1 + this.yOffset));
-        this.context.lineTo(x2 + this.xOffset, this.height - (y2 + this.yOffset));
-        this.context.stroke();
-    };
-    canvas.drawCircle = function(x, y, radius) {
-        this.context.beginPath();
-        this.context.arc(x + this.xOffset, this.height - (y + this.yOffset),radius,0,2*Math.PI);
-        this.context.stroke();
-        this.context.fill();
-    }
-    canvas.drawText = function (x, y, text) {
-        this.context.fillText(text, x + this.xOffset, this.height - (y + this.yOffset));
-    };
+function drawMap(nodes, nodeLinks) {
+
+    canvas.clear();
 
     // Get the highest and lowest X and Y values.
     var minX = 0;
@@ -168,7 +175,6 @@ function drawMap(nodes, nodeLinks, canvasName) {
     var mapCenterY = (maxY - minY)/2 + minY;
     var mapCenterX = (maxX - minX)/2 + minX;
 
-    canvas.getCanvas(canvasName);
     canvas.xOffset = canvas.width/2 - mapCenterX;
     canvas.yOffset = canvas.height/2 - mapCenterY;
 
@@ -226,8 +232,9 @@ function genMap(nodes) {
 function step(nodes, anchorNode) {
     // Calculate the force acting on the node.
 
-    // Springs:
     nodes.forEach(function (node) {
+
+        // Springs:
         node.refs.forEach(function (nodeRef) {
             // Get force (difference between actual distance and current distance).
 
@@ -250,10 +257,8 @@ function step(nodes, anchorNode) {
                 nodeRef.forceY += forceY * -0.5;
             }
         });
-    });
 
-    // General repellant: cause every node to move away from every other node.
-    nodes.forEach(function (node) {
+        // General repellant: cause every node to move away from every other node.
         var currentNode = node;
         nodes.forEach(function (nodeToRepel) {
             if (nodeToRepel != currentNode) {
@@ -301,7 +306,7 @@ function step(nodes, anchorNode) {
 
     // Draw the map so we know what's happening.
     nodeLinks = genNodeLinks(nodes);
-    drawMap(nodes, nodeLinks, "myCanvas");
+    drawMap(nodes, nodeLinks);
 
     if (totalForce < SETTLED_THRESHOLD) {
         clearInterval(timer);

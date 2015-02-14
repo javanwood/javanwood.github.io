@@ -1,0 +1,224 @@
+
+/*
+====================================
+CSS Reset
+====================================
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+==============================================
+Grid
+==============================================
+*/
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    width:960px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/*
+==============================================
+Clearfix
+==============================================
+*/
+
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+};
+.group:after {
+    clear:both;
+}
+.group {
+    clear:both;
+    *zoom:1;
+}
+
+/*
+==============================================
+Typography
+==============================================
+*/
+
+h1, h2, h4, h5, p {
+    margin-bottom: 22px;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-weight: lighter;
+    font-size: 32px;
+    display:inline-block;
+}
+
+p {
+    margin-left: 0.75em;
+    text-indent: 0.75em;
+    font-weight: lighter;
+    word-spacing: 0.2em;
+    font-size: 18px;
+    line-height: 28px;
+    color:#666;
+}
+
+.byline {
+    text-indent: 0;
+    margin-left: 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/*
+===============================================
+Buttons
+===============================================
+*/
+
+.btn {
+    font-size: 12px;
+    background-color: #fff;
+    border: 1px solid #666;
+    color: #666;
+    display: inline-block;
+    cursor: pointer;
+    float: left;
+    padding: 8px 16px;
+}
+
+.btn:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+.btn:active {
+    color: #666;
+}
+
+/*
+==============================================
+Header
+==============================================
+*/
+
+header {
+    border-bottom:2px solid #777;
+    padding: 20px 0 15px 0;
+    margin-bottom: 44px;
+}
+
+header h1 {
+    color:#444;
+    font-weight: lighter;
+    font-size: 24px;
+    line-height: 24px;
+    display:inline-block;
+    margin-bottom: 0px;
+}
+
+header h1 a {
+    text-decoration: none;
+    color:#999;
+}
+
+header h1 a:hover {
+    color:#444;
+}
+
+header h2 {
+    color:#999;
+    font-weight: lighter;;
+    font-size: 18px;
+    text-align: right;
+    display: inline-block;
+    margin-bottom: 0px;
+    float:right;
+}
+
+
+
+/*
+=============================================
+Footer
+=============================================
+*/
+
+footer small {
+    font-size:12px;
+    font-weight: lighter;
+    text-align: center;
+    color:#999;
+    float:left;
+    width:100%;
+}
+
+footer {
+    /* Not using shorthand (padding: 44px 0;) because we don't want to overwrite
+    inherited paddings. */
+    border-top:1px solid #777;
+    padding-bottom:44px;
+    padding-top:14px;
+    margin-top:44px;
+}

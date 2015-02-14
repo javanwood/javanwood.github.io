@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf8">
+    <title>Automatic Node Layout by Javan</title>
+    <link rel="stylesheet" href="assets/stylesheets/main.css">
+</head>
+<body class="container">
+    <header>
+
+        <h1 class="logo">
+            <a href="index.html">Javan Wood</a>
+        </h1>
+        <h2>Projects, notes, cool stuff</h2>
+
+    </header>
+
+    <section class="article">
+
+        <h1>Automatic Node Layout</h1>
+        <p class="byline">October 6 2014</p>
+        <p>
+            This prototype lays out a set of predefined nodes automatically. I needed a solution that layed out the nodes with the minimal link crossing and similar spacing across the graph. Most importantly the solution needed to be repeatable, as the graph would be used for visualisation of a particular problem.
+        </p>
+        <p>
+            My first solution (5 hrs) added each node as layed out with the least path distance, but the link crossing performance was very poor. The second solution (2 hrs, below) is essentially a simple physics engine where links between nodes are springs and each node has a magical repulsive force to cause them to spread out. The algorithm runs until it reaches steady state (stops moving). Both solutions are order dependant, but that's not really a problem.
+        </p>
+        <p>
+            Directions: Hit run to begin/reset arranging, shuffle to change the order of the nodes, changing the arrangement.
+        </p>
+        <canvas id="myCanvas" width="900" height="600"></canvas>
+        <button role="button" class="btn" onClick="resetGraph()">Run</button>
+        <button role="button" class="btn" onClick="shuffleNodes()">Shuffle</button>
+        <br />
+
+    </section>
+
+    <footer>
+
+        <small>&copy; Javan Wood</small>
+
+    </footer>
+</body>
+
+<script src="assets/scripts/canvas.js"></script>
+
+</html>

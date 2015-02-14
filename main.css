@@ -82,7 +82,7 @@ table {
   */
 
 html {
-  background-color:#E8805F;
+  background-color:#FFAA8A;
   font-family: 'Oswald', sans-serif;
   color:#B85834;
 }
@@ -93,7 +93,7 @@ html {
 }
 
 p {
-  font-size:32px;
+  font-size:28px;
   line-height:50px;
   margin-bottom: 30px;
 }

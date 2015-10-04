@@ -87,9 +87,8 @@ html {
   color:#B85834;
 }
 
-.svg {
-  max-width:80%;
-  margin-left:10%;
+section {
+  margin-top: 80px;
 }
 
 p {

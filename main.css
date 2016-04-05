@@ -82,9 +82,11 @@ table {
   */
 
 html {
-  background-color:#FFAA8A;
+  background-color:#FFF2DE;
+  /*background-color:#FFAA8A;*/
   font-family: 'Oswald', sans-serif;
-  color:#B85834;
+  color:#6B4D58;
+  /*color:#B85834;*/
 }
 
 section {
@@ -104,21 +106,40 @@ p {
 }
 
 a {
-  color:#B85834;
-  -webkit-transition: color 0.1s;
-  -moz-transition: color 0.1s;
-  -o-transition: color 0.1s;
-  transition: color 0.1s;
+  color:#6B4D58;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
-a:hover, a:active {
-  color:#D9683D;
+.link-a {
+  text-decoration-color: #52C74E;
+  -moz-text-decoration-color: #52C74E;
+  -webkit-text-decoration-color: #52C74E;
+}
+
+.link-a:hover, .link-a:active {
+  color:#52C74E;
+  text-decoration: none;
+}
+
+.link-b {
+  text-decoration-color: #3499E0;
+  -moz-text-decoration-color: #3499E0;
+  -webkit-text-decoration-color: #3499E0;
+}
+
+.link-b:hover, .link-b:active {
+  color:#3499E0;
+  text-decoration: none;
 }
 
 hr {
   border: 0;
-  height: 1px;
-  background: #B85834;
+  height: 2px;
+  background:#E07E09;
+  /*background: #B85834;*/
 }
 
 footer {

@@ -93,12 +93,12 @@ section {
   padding-top: 36px;
 }
 
-header {
-  margin-top: 36px;
+.spacer {
+  padding-top: 10%;
 }
 
 h1 {
-  padding-top: 72px;
+  padding-top: 36px;
   padding-left: 9px;
   padding-right: 9px;
   font-size:52px;

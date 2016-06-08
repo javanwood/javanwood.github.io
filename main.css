@@ -82,20 +82,35 @@ table {
   */
 
 html {
-  background-color:#FFF2DE;
+  background-color:#FBF7F3;
   /*background-color:#FFAA8A;*/
-  font-family: 'Oswald', sans-serif;
-  color:#6B4D58;
+  font-family: 'Varela Round', sans-serif;
+  color:#263027;
   /*color:#B85834;*/
 }
 
 section {
-  margin-top: 80px;
+  padding-top: 36px;
+}
+
+header {
+  margin-top: 36px;
+}
+
+h1 {
+  padding-top: 72px;
+  padding-left: 9px;
+  padding-right: 9px;
+  font-size:52px;
+  line-height: 72px;
+  font-family: 'Just Another Hand', cursive;
 }
 
 p {
-  font-size:28px;
-  line-height:50px;
+  padding-left: 9px;
+  padding-right: 9px;
+  font-size:18px;
+  line-height:36px;
   margin-bottom: 30px;
 }
 
@@ -106,7 +121,7 @@ p {
 }
 
 a {
-  color:#6B4D58;
+  color:#263027;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   -o-transition: color 0.3s;
@@ -114,39 +129,28 @@ a {
 }
 
 .link-a {
-  text-decoration-color: #52C74E;
-  -moz-text-decoration-color: #52C74E;
-  -webkit-text-decoration-color: #52C74E;
+  text-decoration-color: #6F6A6D;
+  -moz-text-decoration-color: #6F6A6D;
+  -webkit-text-decoration-color: #6F6A6D;
 }
 
 .link-a:hover, .link-a:active {
-  color:#52C74E;
-  text-decoration: none;
-}
-
-.link-b {
-  text-decoration-color: #3499E0;
-  -moz-text-decoration-color: #3499E0;
-  -webkit-text-decoration-color: #3499E0;
-}
-
-.link-b:hover, .link-b:active {
-  color:#3499E0;
+  color:#6F6A6D;
   text-decoration: none;
 }
 
 hr {
   border: 0;
-  height: 2px;
-  background:#E07E09;
-  /*background: #B85834;*/
+  height: 1px;
+  background:#263027;
+}
+
+.small {
+  font-size:15px;
+  line-height: 18px;
 }
 
 footer {
-  width:100%;
-  text-align: center;
-  font-size:16px;
-  line-height: 24px;
   margin-top: 70px;
   margin-bottom: 30px;
 }
